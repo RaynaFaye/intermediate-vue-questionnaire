@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <!-- currently left just for easy acces atm -->
       <router-link to="/">Home</router-link>|
       <router-link to="/questionnaire">Questionnaire</router-link>
     </div>

@@ -20,7 +20,6 @@ export default {
       return (this.componentLoaded = this.$store.state.componentLoaded);
     },
     onSubmit() {
-      console.log("Form submitted");
       this.$store.dispatch("getThankYouPartQuestionnaire");
     }
   }

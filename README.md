@@ -56,14 +56,22 @@ will be about and then has a link to acces the questionnaire.
 This view is to load the questionnaire. It will load the first part of the form and will load the 
 correct component depending on the user's progress. 
 The components it can load are:
-FormFirstPart.vue, FormSecondPart.vue, FormThirdPart.vue, FormFourthPart.vue and the ThankYou.vue
+FormFirstPart.vue, FormSecondPart.vue, FormThirdPart.vue, FormFourthPart.vue, FormFifthPart.vue and the ThankYou.vue
 ```
 
-#### FormFirstPart.vue, FormSecondPart.vue, FormThirdPart.vue, FormFourthPart.vue :
+#### FormFirstPart.vue, FormSecondPart.vue, FormThirdPart.vue, FormFourthPart.vue, FormFifthPart.vue :
 ```
 Components for the questionnaire view that contains different parts of the form.
 Composed of basic inputs, radio buttons and textareas.
 To be adapted depending on the questionnaire
+```
+
+#### RadioInputSatisfaction.vue, RadioInputNumbers.vue, RadioInputYesNo.vue
+```
+Pre made List of radio inputs.
+RadioInputSatisfaction.vue: has a selection from very satisfied to not.
+RadioInputNumbers.vue: has a selection between numbers 0 to 10.
+RadioInputYesNo.vue: is a choice between yes and no.
 ```
 
 #### ThankYou.vue :

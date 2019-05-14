@@ -2,36 +2,39 @@
   <div class="form-section">
     <h2>2. Location Du Véhicule</h2>
     <h3>Lors de la location du véhicule, avez-vous été satisfait du personnel du service location dans les domaine suivant?</h3>
-    <app-radio-input-satisfaction satisfactionType="attente" @satisfactionChoice="attente = $event">
+    <app-radio-input-satisfaction
+      satisfactionType="rentalWait"
+      @satisfactionChoice="rentalWait = $event"
+    >
       <p>Attente au comptoir avant d'être servi:</p>
     </app-radio-input-satisfaction>
     <app-radio-input-satisfaction
-      satisfactionType="courtoisie"
-      @satisfactionChoice="courtoisie = $event"
+      satisfactionType="rentalCourtesy"
+      @satisfactionChoice="rentalCourtesy = $event"
     >
       <p>Courtoisie:</p>
     </app-radio-input-satisfaction>
     <app-radio-input-satisfaction
-      satisfactionType="serviabilite"
-      @satisfactionChoice="serviabilite = $event"
+      satisfactionType="rentalHelpfulness"
+      @satisfactionChoice="rentalHelpfulness = $event"
     >
       <p>Serviabilité:</p>
     </app-radio-input-satisfaction>
     <app-radio-input-satisfaction
-      satisfactionType="professionnalisme"
-      @satisfactionChoice="professionnalisme = $event"
+      satisfactionType="rentalProfessionalism"
+      @satisfactionChoice="rentalProfessionalism = $event"
     >
       <p>Professionnalisme:</p>
     </app-radio-input-satisfaction>
     <app-radio-input-satisfaction
-      satisfactionType="rapidite"
-      @satisfactionChoice="rapidite = $event"
+      satisfactionType="rentalSpeed"
+      @satisfactionChoice="rentalSpeed = $event"
     >
       <p>Rapidité de service au départ du véhicule:</p>
     </app-radio-input-satisfaction>
     <app-radio-input-satisfaction
-      satisfactionType="explication"
-      @satisfactionChoice="explication = $event"
+      satisfactionType="rentalExplanation"
+      @satisfactionChoice="rentalExplanation = $event"
     >
       <p>Explication des tarifs et des conditions de location au comptoir:</p>
     </app-radio-input-satisfaction>
@@ -46,12 +49,12 @@ import RadioInputSatisfaction from "./RadioInputSatisfaction.vue";
 export default {
   data() {
     return {
-      attente: "",
-      courtoisie: "",
-      serviabilite: "",
-      professionnalisme: "",
-      rapidite: "",
-      explication: ""
+      rentalWait: "",
+      rentalCourtesy: "",
+      rentalHelpfulness: "",
+      rentalProfessionalism: "",
+      rentalSpeed: "",
+      rentalExplanation: ""
     };
   },
   components: {

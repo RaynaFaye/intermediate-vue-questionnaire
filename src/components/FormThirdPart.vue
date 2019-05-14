@@ -3,18 +3,21 @@
     <h2>3. Le Véhicule</h2>
     <h3>Avez-vous été satisfait du véhicule reçu?</h3>
     <app-radio-input-satisfaction
-      satisfactionType="proprete"
-      @satisfactionChoice="proprete = $event"
+      satisfactionType="vehiculeClean"
+      @satisfactionChoice="vehiculeClean = $event"
     >
       <p>Proprété intérieure et extérieure:</p>
     </app-radio-input-satisfaction>
     <app-radio-input-satisfaction
-      satisfactionType="satisfaction"
-      @satisfactionChoice="satisfaction = $event"
+      satisfactionType="vehiculeSatisfaction"
+      @satisfactionChoice="vehiculeSatisfaction = $event"
     >
       <p>Satisfaction du véhicule loué par rapport au véhicule réservé:</p>
     </app-radio-input-satisfaction>
-    <app-radio-input-satisfaction satisfactionType="marque" @satisfactionChoice="marque = $event">
+    <app-radio-input-satisfaction
+      satisfactionType="vehiculeBrand"
+      @satisfactionChoice="vehiculeBrand = $event"
+    >
       <p>Marque et modèle du véhicule:</p>
     </app-radio-input-satisfaction>
     <div class="continue">
@@ -28,9 +31,9 @@ import RadioInputSatisfaction from "./RadioInputSatisfaction.vue";
 export default {
   data() {
     return {
-      proprete: "",
-      satisfaction: "",
-      marque: ""
+      vehiculeClean: "",
+      vehiculeSatisfaction: "",
+      vehiculeBrand: ""
     };
   },
   components: {

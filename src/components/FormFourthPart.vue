@@ -2,22 +2,34 @@
   <div class="form-section">
     <h2>4. Restitution du Véhicule</h2>
     <h3>Lors de la restitution du véhicule avez-vous été satisfait des éléments suivants?</h3>
-    <app-radio-input-satisfaction satisfactionType="acces" @satisfactionChoice="acces = $event">
+    <app-radio-input-satisfaction
+      satisfactionType="returnParking"
+      @satisfactionChoice="returnParking = $event"
+    >
       <p>Accès et signalisation du parking:</p>
     </app-radio-input-satisfaction>
-    <app-radio-input-satisfaction satisfactionType="temps" @satisfactionChoice="temps = $event">
+    <app-radio-input-satisfaction
+      satisfactionType="returnTime"
+      @satisfactionChoice="returnTime = $event"
+    >
       <p>Temps d'attente avant d'être servi:</p>
     </app-radio-input-satisfaction>
-    <app-radio-input-satisfaction satisfactionType="qualite" @satisfactionChoice="qualite = $event">
+    <app-radio-input-satisfaction
+      satisfactionType="returnQuality"
+      @satisfactionChoice="returnQuality = $event"
+    >
       <p>Qualité de l'accueil et disponibilité du personnel:</p>
     </app-radio-input-satisfaction>
     <app-radio-input-satisfaction
-      satisfactionType="professionnalismeRapidite"
-      @satisfactionChoice="professionnalismeRapidite = $event"
+      satisfactionType="returnSpeed"
+      @satisfactionChoice="returnSpeed = $event"
     >
       <p>Professionnalisme et rapidité:</p>
     </app-radio-input-satisfaction>
-    <app-radio-input-satisfaction satisfactionType="clarte" @satisfactionChoice="clarte = $event">
+    <app-radio-input-satisfaction
+      satisfactionType="returnPrice"
+      @satisfactionChoice="returnPrice = $event"
+    >
       <p>Clarté de la facturation et conformité par rapport au tarif annoncé:</p>
     </app-radio-input-satisfaction>
     <div class="continue">
@@ -31,11 +43,11 @@ import RadioInputSatisfaction from "./RadioInputSatisfaction.vue";
 export default {
   data() {
     return {
-      acces: "",
-      temps: "",
-      qualite: "",
-      professionnalismeRapidite: "",
-      clarte: ""
+      returnParking: "",
+      returnTime: "",
+      returnQuality: "",
+      returnSpeed: "",
+      returnPrice: ""
     };
   },
   components: {

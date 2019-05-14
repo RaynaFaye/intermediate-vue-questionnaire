@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <h1>This is the Homepage</h1>
-    <p>Thank you for taking the time to take this questionnaire.</p>
-    <p>You will have a set of three questions to fill out.</p>
-    <p>To start the questionaire:</p>
-    <router-link to="/questionnaire" class="questionnaire-button">Click Here</router-link>
+    <h1>Titre du questionnaire</h1>
+    <p>Notre préoccupation constante est de vous offrir le service que vous attendez.</p>
+    <p>Ce questionnaire nous aidera à améliorer notre prestation afin de vous garantir le meilleur niveau de qualité</p>
+    <p>Pour commencer le questionnaire</p>
+    <router-link to="/questionnaire" class="questionnaire-button">Cliquez ici</router-link>
   </div>
 </template>
 
@@ -15,11 +15,20 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .questionnaire-button {
+  width: 10%;
   text-decoration: none;
-  color: white;
-  background: blue;
+  text-align: center;
+  color: black;
+  background: #fb7219;
   padding: 10px;
+  margin-top: 25px;
   border-radius: 5px;
+  align-self: center;
 }
 </style>

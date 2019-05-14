@@ -4,6 +4,7 @@ import FormFirstPart from "./components/FormFirstPart.vue";
 import FormSecondPart from "./components/FormSecondPart.vue";
 import FormThirdPart from "./components/FormThirdPart.vue";
 import FormFourthPart from "./components/FormFourthPart.vue";
+import FormFifthPart from "./components/FormFifthPart.vue";
 import ThankYou from "./components/ThankYou.vue";
 
 Vue.use(Vuex);
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     changeFormFourthPart(state) {
       state.componentLoaded = FormFourthPart
     },
+    changeFormFifthPart(state) {
+      state.componentLoaded = FormFifthPart
+    },
     changeFormThankYou(state) {
       state.componentLoaded = ThankYou
     }
@@ -35,6 +39,9 @@ export default new Vuex.Store({
     },
     getFourthPartQuestionnaire({ commit }) {
       commit('changeFormFourthPart')
+    },
+    getFifthPartQuestionnaire({ commit }) {
+      commit('changeFormFifthPart')
     },
     getThankYouPartQuestionnaire({ commit }) {
       commit('changeFormThankYou')

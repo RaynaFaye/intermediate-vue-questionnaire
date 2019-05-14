@@ -1,10 +1,10 @@
 <template>
   <div class="form-section">
     <h2>5. Quelques informations pour mieux vous connaitre</h2>
-    <app-radio-input-yes-no yesNoType="haveRented" @yesOrNoChoice="dejaLoue = $event">
+    <app-radio-input-yes-no yesNoType="hasRented" @yesOrNoChoice="hasRented = $event">
       <p>Avez-vous déjà loué un véhicule chez LECLERC?</p>
     </app-radio-input-yes-no>
-    <app-radio-input-yes-no yesNoType="alreadyClient" @yesOrNoChoice="dejaClientAilleurs = $event">
+    <app-radio-input-yes-no yesNoType="alreadyClient" @yesOrNoChoice="alreadyClient = $event">
       <p>Etes-vous client d'autres loueurs?</p>
     </app-radio-input-yes-no>
     <div>
@@ -14,24 +14,24 @@
           <label for="favorable">Favorable</label>
           <input
             type="radio"
-            name="comparaison"
+            name="comparison"
             value="favorable"
             id="favorable"
-            v-model="comparaison"
+            v-model="comparison"
           >
         </div>
         <div class="radio-input-section">
           <label for="egale">Egale</label>
-          <input type="radio" name="comparaison" value="egale" id="egale" v-model="comparaison">
+          <input type="radio" name="comparison" value="egale" id="egale" v-model="comparison">
         </div>
         <div class="radio-input-section">
           <label for="defavorable">Défavorable</label>
           <input
             type="radio"
-            name="comparaison"
+            name="comparison"
             value="defavorable"
             id="defavorable"
-            v-model="comparaison"
+            v-model="comparison"
           >
         </div>
       </div>
@@ -40,16 +40,16 @@
       <p>Comment jugez-vous nos tarifs?</p>
       <div class="radio-input">
         <div class="radio-input-section">
-          <label for="competitifs">Compétitifs</label>
-          <input type="radio" name="tarifs" value="competitifs" id="competitifs" v-model="tarifs">
+          <label for="competitive">Compétitifs</label>
+          <input type="radio" name="prices" value="competitive" id="competitive" v-model="prices">
         </div>
         <div class="radio-input-section">
-          <label for="corrects">Corrects</label>
-          <input type="radio" name="tarifs" value="corrects" id="corrects" v-model="tarifs">
+          <label for="correct">Corrects</label>
+          <input type="radio" name="prices" value="correct" id="correct" v-model="prices">
         </div>
         <div class="radio-input-section">
-          <label for="eleves">Trop élevés</label>
-          <input type="radio" name="tarifs" value="eleves" id="eleves" v-model="tarifs">
+          <label for="high">Trop élevés</label>
+          <input type="radio" name="prices" value="high" id="high" v-model="prices">
         </div>
       </div>
     </div>
@@ -57,22 +57,22 @@
       <p>Vous louez à titre</p>
       <div class="radio-input">
         <div class="radio-input-section">
-          <label for="particulier">Particulier</label>
+          <label for="individual">Particulier</label>
           <input
             type="radio"
             name="typeClient"
-            value="particulier"
-            id="particulier"
+            value="individual"
+            id="individual"
             v-model="typeClient"
           >
         </div>
         <div class="radio-input-section">
-          <label for="professionnel">Professionnel</label>
+          <label for="professional">Professionnel</label>
           <input
             type="radio"
             name="typeClient"
-            value="professionnel"
-            id="professionnel"
+            value="professional"
+            id="professional"
             v-model="typeClient"
           >
         </div>
@@ -82,16 +82,16 @@
       <p>Par rapport à vos besoins, pensez-vous que la gamme des véhicules proposée est</p>
       <div class="radio-input">
         <div class="radio-input-section">
-          <label for="adaptee">Adaptée</label>
-          <input type="radio" name="adaptation" value="adaptee" id="adaptee" v-model="adaptation">
+          <label for="adapted">Adaptée</label>
+          <input type="radio" name="adaptation" value="adapted" id="adapted" v-model="adaptation">
         </div>
         <div class="radio-input-section">
-          <label for="inadaptee">Inadaptée</label>
+          <label for="unsuitable">Inadaptée</label>
           <input
             type="radio"
             name="adaptation"
-            value="inadaptee"
-            id="inadaptee"
+            value="unsuitable"
+            id="unsuitable"
             v-model="adaptation"
           >
         </div>
@@ -101,16 +101,16 @@
       <p>Qu'est ce qui vous a décidé de louer un véhicule chez Leclerc?</p>
       <div class="radio-input">
         <div class="radio-input-section">
-          <label for="prix">Le Prix</label>
-          <input type="radio" name="choixLouer" value="prix" id="prix" v-model="choixLouer">
+          <label for="price">Le Prix</label>
+          <input type="radio" name="choiceRent" value="price" id="price" v-model="choiceRent">
         </div>
         <div class="radio-input-section">
           <label for="service">Le Service</label>
-          <input type="radio" name="choixLouer" value="service" id="service" v-model="choixLouer">
+          <input type="radio" name="choiceRent" value="service" id="service" v-model="choiceRent">
         </div>
         <div class="radio-input-section">
-          <label for="autre">Autre</label>
-          <input type="radio" name="choixLouer" value="autre" id="autre" v-model="choixLouer">
+          <label for="other">Autre</label>
+          <input type="radio" name="choiceRent" value="other" id="other" v-model="choiceRent">
         </div>
       </div>
     </div>
@@ -125,13 +125,13 @@ import RadioInputYesNo from "./RadioInputYesNo.vue";
 export default {
   data() {
     return {
-      dejaLoue: "",
-      dejaClientAilleurs: "",
-      comparaison: "",
-      tarifs: "",
+      hasRented: "",
+      alreadyClient: "",
+      comparison: "",
+      prices: "",
       typeClient: "",
       adaptation: "",
-      choixLouer: ""
+      choiceRent: ""
     };
   },
   components: {

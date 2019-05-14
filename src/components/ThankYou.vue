@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>Thank You</h1>
-    <p>Thank you for completing this questionnaire</p>
+  <div class="form-section">
+    <h1>Merci</h1>
+    <p>Merci d'avoir rempli le questionnaire</p>
   </div>
 </template>
 
@@ -9,5 +9,8 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+.form-section {
+  text-align: center;
+}
 </style>

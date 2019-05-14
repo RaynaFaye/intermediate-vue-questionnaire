@@ -1,54 +1,61 @@
 <template>
-  <div>
-    <p>What value would you rate?</p>
-    <div class="radio-input">
-      <div>
-        <label for="zero">0</label>
-        <input type="radio" name="radio-input" value="0" id="zero" v-model="inputRadio">
-      </div>
-      <div>
-        <label for="one">1</label>
-        <input type="radio" name="radio-input" value="1" id="one" v-model="inputRadio">
-      </div>
-      <div>
-        <label for="two">2</label>
-        <input type="radio" name="radio-input" value="2" id="two" v-model="inputRadio">
-      </div>
-      <div>
-        <label for="three">3</label>
-        <input type="radio" name="radio-input" value="3" id="three" v-model="inputRadio">
-      </div>
-      <div>
-        <label for="four">4</label>
-        <input type="radio" name="radio-input" value="4" id="four" v-model="inputRadio">
-      </div>
-      <div>
-        <label for="five">5</label>
-        <input type="radio" name="radio-input" value="5" id="five" v-model="inputRadio">
-      </div>
-    </div>
-    <div class="first-textarea">
-      <label for="first-textarea">First Textarea</label>
-      <textarea name="first-textarea" id="first-textarea" v-model="textareaOne"></textarea>
-    </div>
-    <div class="fourth-input">
-      <label for="fourth-input">Fourth Input</label>
-      <input type="text" name="fourth-input" id="fourth-input" v-model="inputFour">
-    </div>
+  <div class="form-section">
+    <h2>2. Location Du Véhicule</h2>
+    <h3>Lors de la location du véhicule, avez-vous été satisfait du personnel du service location dans les domaine suivant?</h3>
+    <app-radio-input-satisfaction satisfactionType="attente" @satisfactionChoice="attente = $event">
+      <p>Attente au comptoir avant d'être servi:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction
+      satisfactionType="courtoisie"
+      @satisfactionChoice="courtoisie = $event"
+    >
+      <p>Courtoisie:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction
+      satisfactionType="serviabilite"
+      @satisfactionChoice="serviabilite = $event"
+    >
+      <p>Serviabilité:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction
+      satisfactionType="professionnalisme"
+      @satisfactionChoice="professionnalisme = $event"
+    >
+      <p>Professionnalisme:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction
+      satisfactionType="rapidite"
+      @satisfactionChoice="rapidite = $event"
+    >
+      <p>Rapidité de service au départ du véhicule:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction
+      satisfactionType="explication"
+      @satisfactionChoice="explication = $event"
+    >
+      <p>Explication des tarifs et des conditions de location au comptoir:</p>
+    </app-radio-input-satisfaction>
     <div class="continue">
-      <button class="next-button" @click="goNextPart">Next</button>
+      <button class="next-button" @click="goNextPart">Suivant</button>
     </div>
   </div>
 </template>
 
 <script>
+import RadioInputSatisfaction from "./RadioInputSatisfaction.vue";
 export default {
   data() {
     return {
-      inputRadio: "",
-      textareaOne: "",
-      inputFour: ""
+      attente: "",
+      courtoisie: "",
+      serviabilite: "",
+      professionnalisme: "",
+      rapidite: "",
+      explication: ""
     };
+  },
+  components: {
+    appRadioInputSatisfaction: RadioInputSatisfaction
   },
   methods: {
     goNextPart() {
@@ -59,22 +66,16 @@ export default {
 </script>
 
 <style scoped>
-.radio-input {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 25px;
+p {
+  font-weight: bold;
 }
-.fourth-input,
-.first-textarea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
+.continue {
+  align-self: end;
 }
 .next-button {
   font-size: 20px;
-  color: white;
-  background: blue;
+  color: black;
+  background: #fb7219;
   padding: 10px 25px 10px 25px;
   border-radius: 5px;
   border: none;

@@ -28,4 +28,27 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+.radio-input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.radio-input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Not used but kept in case of futur need atm */
+.first-input,
+.second-input,
+.third-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
 </style>

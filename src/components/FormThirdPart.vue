@@ -1,31 +1,40 @@
 <template>
-  <div>
-    <div class="fifth-input">
-      <label for="fifth-input">Fifth Input</label>
-      <input type="text" name="fifth-input" id="fifth-input" v-model="inputFive">
-    </div>
-    <div class="sixth-input">
-      <label for="sixth-input">Sixth Input</label>
-      <input type="text" name="sixth-input" id="sixth-input" v-model="inputSix">
-    </div>
-    <div class="seventh-input">
-      <label for="seventh-input">Seventh Input</label>
-      <input type="text" name="seventh-input" id="seventh-input" v-model="inputSeven">
-    </div>
+  <div class="form-section">
+    <h2>3. Le Véhicule</h2>
+    <h3>Avez-vous été satisfait du véhicule reçu?</h3>
+    <app-radio-input-satisfaction
+      satisfactionType="proprete"
+      @satisfactionChoice="proprete = $event"
+    >
+      <p>Proprété intérieure et extérieure:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction
+      satisfactionType="satisfaction"
+      @satisfactionChoice="satisfaction = $event"
+    >
+      <p>Satisfaction du véhicule loué par rapport au véhicule réservé:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction satisfactionType="marque" @satisfactionChoice="marque = $event">
+      <p>Marque et modèle du véhicule:</p>
+    </app-radio-input-satisfaction>
     <div class="continue">
-      <button class="next-button" @click="goNextPart">Next</button>
+      <button class="next-button" @click="goNextPart">Suivant</button>
     </div>
   </div>
 </template>
 
 <script>
+import RadioInputSatisfaction from "./RadioInputSatisfaction.vue";
 export default {
   data() {
     return {
-      inputFive: "",
-      inputSix: "",
-      inputSeven: ""
+      proprete: "",
+      satisfaction: "",
+      marque: ""
     };
+  },
+  components: {
+    appRadioInputSatisfaction: RadioInputSatisfaction
   },
   methods: {
     goNextPart() {
@@ -36,18 +45,16 @@ export default {
 </script>
 
 <style scoped>
-.fifth-input,
-.sixth-input,
-.seventh-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
+p {
+  font-weight: bold;
+}
+.continue {
+  align-self: end;
 }
 .next-button {
   font-size: 20px;
-  color: white;
-  background: blue;
+  color: black;
+  background: #fb7219;
   padding: 10px 25px 10px 25px;
   border-radius: 5px;
   border: none;

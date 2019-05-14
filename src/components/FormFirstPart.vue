@@ -1,31 +1,37 @@
 <template>
-  <div>
-    <div class="first-input">
-      <label for="first-input">First Input</label>
-      <input type="text" name="first-input" id="first-input" v-model="inputOne">
-    </div>
-    <div class="second-input">
-      <label for="second-input">Second Input</label>
-      <input type="text" name="second-input" id="second-input" v-model="inputTwo">
-    </div>
-    <div class="third-input">
-      <label for="third-input">Third Input</label>
-      <input type="text" name="third-input" id="third-input" v-model="inputThree">
-    </div>
+  <div class="form-section">
+    <h2>1. Votre Appréciation Générale</h2>
+    <app-radio-input-satisfaction
+      satisfactionType="satisfactionGlobal"
+      @satisfactionChoice="globalSatisfaction = $event"
+    >
+      <p>Avez-vous été globalement satisfait de cette location?</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-numbers
+      numberType="recommendationNumber"
+      @numberChoice="recommendation = $event"
+    >
+      <p>En vous basant sur cette location, recommanderiez-vous la Location LECLERC à votre entourage?</p>
+    </app-radio-input-numbers>
     <div class="continue">
-      <button class="next-button" @click="goNextPart">Next</button>
+      <button class="next-button" @click="goNextPart">Suivant</button>
     </div>
   </div>
 </template>
 
 <script>
+import RadioInputSatisfaction from "./RadioInputSatisfaction.vue";
+import RadioInputNumbers from "./RadioInputNumbers.vue";
 export default {
   data() {
     return {
-      inputOne: "",
-      inputTwo: "",
-      inputThree: ""
+      globalSatisfaction: "",
+      recommendation: ""
     };
+  },
+  components: {
+    appRadioInputSatisfaction: RadioInputSatisfaction,
+    appRadioInputNumbers: RadioInputNumbers
   },
   methods: {
     goNextPart() {
@@ -36,18 +42,16 @@ export default {
 </script>
 
 <style scoped>
-.first-input,
-.second-input,
-.third-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
+p {
+  font-weight: bold;
+}
+.continue {
+  align-self: end;
 }
 .next-button {
   font-size: 20px;
-  color: white;
-  background: blue;
+  color: black;
+  background: #fb7219;
   padding: 10px 25px 10px 25px;
   border-radius: 5px;
   border: none;

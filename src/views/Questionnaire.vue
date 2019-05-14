@@ -1,6 +1,6 @@
 <template>
   <div class="questionnaire">
-    <h1>This is the questionnaire page</h1>
+    <h1>Titre du questionnaire</h1>
     <form @submit.prevent="onSubmit">
       <component :is="whatComponent()"></component>
     </form>
@@ -27,12 +27,13 @@ export default {
 </script>
 
 <style>
-form {
-  height: 250px;
-  width: 50%;
-  display: inline-flex;
+.questionnaire {
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+}
+form {
+  width: 75%;
 }
 textarea {
   width: 50%;

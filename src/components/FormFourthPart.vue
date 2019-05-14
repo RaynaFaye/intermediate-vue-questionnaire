@@ -1,44 +1,65 @@
 <template>
-  <div>
-    <div class="second-textarea">
-      <p>Final Thoughts?</p>
-      <label for="second-textarea">Second Textarea</label>
-      <textarea name="second-textarea" id="second-textarea" v-model="textareaTwo"></textarea>
-    </div>
-    <div class="submit-button">
-      <input type="submit" value="Send" class="submit">
+  <div class="form-section">
+    <h2>4. Restitution du Véhicule</h2>
+    <h3>Lors de la restitution du véhicule avez-vous été satisfait des éléments suivants?</h3>
+    <app-radio-input-satisfaction satisfactionType="acces" @satisfactionChoice="acces = $event">
+      <p>Accès et signalisation du parking:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction satisfactionType="temps" @satisfactionChoice="temps = $event">
+      <p>Temps d'attente avant d'être servi:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction satisfactionType="qualite" @satisfactionChoice="qualite = $event">
+      <p>Qualité de l'accueil et disponibilité du personnel:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction
+      satisfactionType="professionnalismeRapidite"
+      @satisfactionChoice="professionnalismeRapidite = $event"
+    >
+      <p>Professionnalisme et rapidité:</p>
+    </app-radio-input-satisfaction>
+    <app-radio-input-satisfaction satisfactionType="clarte" @satisfactionChoice="clarte = $event">
+      <p>Clarté de la facturation et conformité par rapport au tarif annoncé:</p>
+    </app-radio-input-satisfaction>
+    <div class="continue">
+      <button class="next-button" @click="goNextPart">Suivant</button>
     </div>
   </div>
 </template>
 
 <script>
+import RadioInputSatisfaction from "./RadioInputSatisfaction.vue";
 export default {
   data() {
     return {
-      textareaTwo: ""
+      acces: "",
+      temps: "",
+      qualite: "",
+      professionnalismeRapidite: "",
+      clarte: ""
     };
+  },
+  components: {
+    appRadioInputSatisfaction: RadioInputSatisfaction
   },
   methods: {
     goNextPart() {
-      this.$store.dispatch("getThankYouPartQuestionnaire");
+      this.$store.dispatch("getFifthPartQuestionnaire");
     }
   }
 };
 </script>
 
 <style scoped>
-.second-textarea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
+p {
+  font-weight: bold;
 }
-.submit {
-  width: auto;
-  height: auto;
+.continue {
+  align-self: end;
+}
+.next-button {
   font-size: 20px;
-  color: white;
-  background: blue;
+  color: black;
+  background: #fb7219;
   padding: 10px 25px 10px 25px;
   border-radius: 5px;
   border: none;

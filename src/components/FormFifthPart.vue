@@ -115,7 +115,7 @@
       </div>
     </div>
     <div class="submit-button">
-      <input type="submit" value="Envoyer" class="submit">
+      <input type="submit" value="Envoyer" class="submit" @click="sendFinalData">
     </div>
   </div>
 </template>
@@ -136,6 +136,20 @@ export default {
   },
   components: {
     appRadioInputYesNo: RadioInputYesNo
+  },
+  methods: {
+    sendFinalData() {
+      const formData = {
+        hasRented: this.hasRented,
+        alreadyClient: this.alreadyClient,
+        comparison: this.comparison,
+        prices: this.prices,
+        typeClient: this.typeClient,
+        adaptation: this.adaptation,
+        choiceRent: this.choiceRent
+      };
+      this.$store.dispatch("getThankYouPartQuestionnaire", formData);
+    }
   }
 };
 </script>

@@ -35,7 +35,11 @@ export default {
   },
   methods: {
     goNextPart() {
-      this.$store.dispatch("getSecondPartQuestionnaire");
+      const formData = {
+        globalSatisfaction: this.globalSatisfaction,
+        recommendation: this.recommendation
+      };
+      this.$store.dispatch("getSecondPartQuestionnaire", formData);
     }
   }
 };

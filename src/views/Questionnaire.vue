@@ -1,7 +1,7 @@
 <template>
   <div class="questionnaire">
     <h1>Titre du questionnaire</h1>
-    <form @submit.prevent="onSubmit">
+    <form @submit.prevent>
       <component :is="whatComponent()"></component>
     </form>
   </div>
@@ -18,9 +18,6 @@ export default {
   methods: {
     whatComponent() {
       return (this.componentLoaded = this.$store.state.componentLoaded);
-    },
-    onSubmit() {
-      this.$store.dispatch("getThankYouPartQuestionnaire");
     }
   }
 };

@@ -41,7 +41,12 @@ export default {
   },
   methods: {
     goNextPart() {
-      this.$store.dispatch("getFourthPartQuestionnaire");
+      const formData = {
+        vehiculeClean: this.vehiculeClean,
+        vehiculeSatisfaction: this.vehiculeSatisfaction,
+        vehiculeBrand: this.vehiculeBrand
+      };
+      this.$store.dispatch("getFourthPartQuestionnaire", formData);
     }
   }
 };

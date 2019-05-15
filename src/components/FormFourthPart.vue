@@ -55,7 +55,14 @@ export default {
   },
   methods: {
     goNextPart() {
-      this.$store.dispatch("getFifthPartQuestionnaire");
+      const formData = {
+        returnParking: this.returnParking,
+        returnTime: this.returnTime,
+        returnQuality: this.returnQuality,
+        returnSpeed: this.returnSpeed,
+        returnPrice: this.returnPrice
+      };
+      this.$store.dispatch("getFifthPartQuestionnaire", formData);
     }
   }
 };

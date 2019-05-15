@@ -62,7 +62,15 @@ export default {
   },
   methods: {
     goNextPart() {
-      this.$store.dispatch("getThirdPartQuestionnaire");
+      const formData = {
+        rentalWait: this.rentalWait,
+        rentalCourtesy: this.rentalCourtesy,
+        rentalHelpfulness: this.rentalHelpfulness,
+        rentalProfessionalism: this.rentalProfessionalism,
+        rentalSpeed: this.rentalSpeed,
+        rentalExplanation: this.rentalExplanation
+      };
+      this.$store.dispatch("getThirdPartQuestionnaire", formData);
     }
   }
 };

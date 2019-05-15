@@ -12,39 +12,45 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     componentLoaded: FormFirstPart,
+    formData: {}
   },
   mutations: {
-    changeFormSecondPart(state) {
+    changeFormSecondPart(state, formData) {
+      state.formData = { ...state.formData, ...formData }
       state.componentLoaded = FormSecondPart
     },
-    changeFormThirdPart(state) {
+    changeFormThirdPart(state, formData) {
+      state.formData = { ...state.formData, ...formData }
       state.componentLoaded = FormThirdPart
     },
-    changeFormFourthPart(state) {
+    changeFormFourthPart(state, formData) {
+      state.formData = { ...state.formData, ...formData }
       state.componentLoaded = FormFourthPart
     },
-    changeFormFifthPart(state) {
+    changeFormFifthPart(state, formData) {
+      state.formData = { ...state.formData, ...formData }
       state.componentLoaded = FormFifthPart
     },
-    changeFormThankYou(state) {
+    changeFormThankYou(state, formData) {
+      state.formData = { ...state.formData, ...formData }
       state.componentLoaded = ThankYou
     }
   },
   actions: {
-    getSecondPartQuestionnaire({ commit }) {
-      commit('changeFormSecondPart')
+    getSecondPartQuestionnaire({ commit }, formData) {
+      commit('changeFormSecondPart', formData)
     },
-    getThirdPartQuestionnaire({ commit }) {
-      commit('changeFormThirdPart')
+    getThirdPartQuestionnaire({ commit }, formData) {
+      commit('changeFormThirdPart', formData)
     },
-    getFourthPartQuestionnaire({ commit }) {
-      commit('changeFormFourthPart')
+    getFourthPartQuestionnaire({ commit }, formData) {
+      commit('changeFormFourthPart', formData)
     },
-    getFifthPartQuestionnaire({ commit }) {
-      commit('changeFormFifthPart')
+    getFifthPartQuestionnaire({ commit }, formData) {
+      commit('changeFormFifthPart', formData)
     },
-    getThankYouPartQuestionnaire({ commit }) {
-      commit('changeFormThankYou')
+    getThankYouPartQuestionnaire({ commit }, formData) {
+      commit('changeFormThankYou', formData)
     },
   }
 });

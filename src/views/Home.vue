@@ -31,4 +31,9 @@ export default {
   border-radius: 5px;
   align-self: center;
 }
+@media all and (max-width: 500px) {
+  .questionnaire-button {
+    width: 35%;
+  }
+}
 </style>

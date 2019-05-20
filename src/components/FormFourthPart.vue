@@ -63,6 +63,7 @@ export default {
         returnPrice: this.returnPrice
       };
       this.$store.dispatch("getFifthPartQuestionnaire", formData);
+      window.scrollTo(0, 0);
     }
   }
 };

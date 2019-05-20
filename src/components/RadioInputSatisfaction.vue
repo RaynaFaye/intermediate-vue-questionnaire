@@ -91,4 +91,13 @@ p {
   flex-direction: column;
   align-items: center;
 }
+@media all and (max-width: 690px) {
+  .radio-input {
+    flex-direction: column;
+  }
+  .radio-input-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 </style>

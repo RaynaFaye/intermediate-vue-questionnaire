@@ -71,6 +71,7 @@ export default {
         rentalExplanation: this.rentalExplanation
       };
       this.$store.dispatch("getThirdPartQuestionnaire", formData);
+      window.scrollTo(0, 0);
     }
   }
 };

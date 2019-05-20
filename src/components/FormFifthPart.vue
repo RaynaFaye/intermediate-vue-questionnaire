@@ -149,6 +149,7 @@ export default {
         choiceRent: this.choiceRent
       };
       this.$store.dispatch("getThankYouPartQuestionnaire", formData);
+      window.scrollTo(0, 0);
     }
   }
 };
@@ -157,16 +158,6 @@ export default {
 <style scoped>
 p {
   font-weight: bold;
-}
-.radio-input {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 25px;
-}
-.radio-input-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .submit-button {
   align-self: end;

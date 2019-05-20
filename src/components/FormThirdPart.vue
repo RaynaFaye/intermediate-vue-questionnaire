@@ -47,6 +47,7 @@ export default {
         vehiculeBrand: this.vehiculeBrand
       };
       this.$store.dispatch("getFourthPartQuestionnaire", formData);
+      window.scrollTo(0, 0);
     }
   }
 };

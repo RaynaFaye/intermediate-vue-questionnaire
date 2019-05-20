@@ -40,6 +40,7 @@ export default {
         recommendation: this.recommendation
       };
       this.$store.dispatch("getSecondPartQuestionnaire", formData);
+      window.scrollTo(0, 0);
     }
   }
 };
